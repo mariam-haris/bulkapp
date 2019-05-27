@@ -1,0 +1,258 @@
+*{
+    @extend %all;
+    font-family: February;
+    font-size: 15px;
+}
+.gradientButton{
+    color: $secondryColor;
+    width:20px;
+}
+.lightBg{
+    background-color:  #a89cff;
+}
+.container{
+    width: $width;
+    margin: $margin;
+}
+.btnGrident{
+    border: 0;
+    background-color: $backgroundColor;
+    @include gradientBg(left, #b72dff, #7c45fc);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888fff', endColorstr='#d196ff',GradientType=1 );
+    padding: 12px 30px;
+    color: $secondryColor;
+    border-radius: $borderRd;
+}
+.grid{
+    @include grid( grid ,  32% 32% 32% ,23px);
+}
+.header{
+    @include background-image("../img/home-banner.jpg", no-repeat , cover);
+    color: $secondryColor;
+    margin-bottom: $marginBottom;
+}
+.header-para{
+    width: 70%;
+    h2{
+        font-size: 50px;
+        margin-bottom: $pMargin;
+        margin-top: 100px;
+    }
+}
+.header-img{
+    text-align: center;
+}
+.nav-bar{
+  @include flex(flex , space-between , center);
+    padding: $navPadding;
+    ul{
+        list-style: $list-style;
+    }
+    li{
+        @extend %li;
+    }
+} 
+.header-content ,.architecture {
+    @include  gridTwoColumn (grid , 43% , 40% , 190px , 77px , 0 );
+}
+.header-content h3{
+    font-size: 50px;
+}
+.explore{
+    @include buttonBorder();
+}
+.main-header {
+   @extend %center;
+   margin-bottom: $marginBottom;
+}
+.main-header p{
+    width: 84%;
+    margin:$margin;
+}
+.features-types{
+    @extend %gridFourColumn ;
+        p{
+            color:$greyColor; 
+    }
+}
+.margin-section{
+   margin-bottom: $marginBottom; 
+}
+.back-color{
+    @include box-shadow( 0 ,5px ,8px ,2px, rgba(0,0,0,0.14),false);
+    padding: 50px 25px;
+}
+.type-details {
+    text-align: center;
+    padding-top: $pMargin;
+}
+.right{
+    font-size: 30px;
+}
+.architecture-txt h3 , .main-header h3 , .download h3{
+    @extend %archH3;
+}
+.standard-header p ,.p-color{
+    color:$greyColor;
+    margin-bottom: $pMargin 
+}
+.architecture-img img , .video-section video{
+    width:$imgWidth;
+}
+.type-details p , .product-imgs , .product-para h4 , .product-para p , .header-para p{
+    margin-bottom: $pMargin;
+}
+.video-section {
+    position: relative;
+        figure{
+            position: absolute;
+            top: 191px;
+            right: 578px;
+       
+        }
+}
+.gray-btn{
+    @include buttonBorder () ;
+}
+.standard{
+    @include backgroundColor ( $secondryColor , 50px, 25px);
+
+    .standard-header{
+        @include flex (flex , space-between , end );
+        @extend %border;
+            h4{
+                font-size: 20px;
+            }
+    }
+}
+.pricing-table ,.testimonials{
+    @include backgroundColor ($lightColor , 80px, 50px)
+}
+.bg-color{
+    background-color: $lightColor;
+}
+.screenshots{
+    @extend %gridFourColumn;
+}
+.testimonials-grid{
+    @include  gridTwoColumn (grid , 48.5% , 48.5% , 30px , 77px , 0 );
+    .testimonials-articlas{
+        @include gridTwoColumn ( grid , 18% , 79% , 15px , 0 , 0 ) ;
+        background-color: $secondryColor;
+        border-radius: $borderRd + 0.2em;
+        padding: 30px;
+    }
+}
+.download{
+    @include gradientBg(left, #b72dff, #7c45fc);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888fff', endColorstr='#d196ff',GradientType=1 );
+    padding: 125px 50px;
+    color: $secondryColor;
+    margin: 0 auto;
+    text-align: center;
+    i{
+        font-size: 45px;
+        margin-right: 20px;
+    }
+}
+.icons{
+    @include flex(flex , center , center);
+    .app-store{
+        border: 1px solid $secondryColor;
+        border-radius: $borderRd;
+        padding: 12px 30px; 
+        margin-right: $pMargin;
+        @include flex(flex , center , center);
+        h4{
+            font-size: 25px;
+        }
+    }
+}
+.container-download{
+    width: 70%;
+    margin: $margin; 
+    .margin-p{
+        margin-bottom: $pMargin +10px;
+    }
+}
+.news {
+    padding: 80px 0;
+    .bg-color{
+        padding: 50px 25px;
+        h4{
+            font-size: 23px;
+            margin-bottom: $pMargin;
+        }
+        span{
+            margin-right: 8px;
+            font-size: 12px;
+        }
+        i{
+            font-size: 12px;
+        }
+    }
+}
+.border{
+    @include buttonBorder();
+    display: inline-block;
+    background-color: #fff;
+}
+.footer{
+    @include backgroundColor ($footerColor , 80px, 50px);
+    color:$secondryColor;
+    .footer-first-row{
+        @include grid(grid ,23% 48% 24% , 25px);
+    }
+    .padding{
+        padding-bottom: $pMargin;
+    }
+}
+.newsletter{
+    position: relative;
+    input{
+        border: 0;
+        padding: 12px;
+        border-radius: 25px;
+        width: 374px;
+    }
+    button{
+        border-radius: 25px;
+        width: 156px;
+        z-index: 2;
+        right: 4em;
+        top: 0em;
+        position: relative;
+    }
+}
+.instgram-img{
+    display: grid;
+    grid-template-rows: 49% 49%;
+    grid-gap: 8px;
+    .flex{
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+}
+.footer-second-row{
+    .inline{
+        display: inline-block;
+        .icon{
+            background-color: #111111;
+            padding: 15px;
+            margin-right: 8px;
+        }
+        .blue{
+            color: $blueIcon;
+        }
+    }
+    .float{
+        float: right;
+    }
+}
+.footer-content{
+    @include gridRows (grid , 70% , 19% ,  70px , 60px , 0)
+}
+@font-face{
+    font-family: February;
+    src:url("../fonts/regular.ttf")
+}

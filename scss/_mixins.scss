@@ -1,0 +1,82 @@
+@mixin gradientBg($direction, $from, $to) { 
+    @each $vender in $venders{
+    background: #{$vender}linear-gradient($direction, $from 0%, $to 100%);
+    }  
+}
+@mixin background-image($path, $bgRepeat, $size) {
+    background-image:url($path);
+    background-repeat: $bgRepeat;
+    background-size: $size;
+  } 
+@mixin box-shadow($top, $left, $blur, $spread, $color, $inset: false) {
+	@if $inset {
+	  @each $vender in $venders {
+            #{$vender}box-shadow: inset $top $left $blur $spread $color;
+		}
+	} @else {
+	  @each $vender in $venders {
+            #{$vender}box-shadow: $top $left $blur $spread $color;
+            box-shadow:  $top $left $blur $spread $color;
+		}
+	}
+}
+@mixin buttonBorder () {
+    border: 1px solid #d6d6d6; 
+    padding: 12px 30px; 
+    background-color: $btnBg;
+    border-radius: $borderRd;
+} 
+@mixin gridTwoColumn ($grid , $num1 , $num2 , $gapNum , $num3 , $num4 ) {
+    display: $grid;
+    grid-template-columns: $num1  $num2;
+    grid-gap: $gapNum;
+    padding: $num3 $num4;
+}
+@mixin gridRows ($display , $num1 , $num2 , $gapNum , $num3 , $num4){
+        display: $display;
+        grid-template-rows: $num1  $num2;
+        grid-gap: $gapNum;
+        padding: $num3 $num4;
+}
+@mixin backgroundColor ($color , $num , $num2) {
+    background-color: $color;
+    padding: $num  $num2;
+}
+@mixin flex($display , $justify , $align) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin grid($display , $template , $gap){
+    display: $display ;
+    grid-template-columns: $template;
+    grid-gap: $gap;
+} 
+// PLACEHOLDERS
+%all{
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box; 
+}
+%gridFourColumn{
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-gap: 32px;
+}
+%li{
+    display: inline-block;
+    margin-right: 27px;
+    font-size: 14px;
+}
+%center{
+    text-align: center;
+    width: 60%;
+    margin:$margin;
+}
+%archH3{
+    font-size: 40px;
+    margin-bottom: $pMargin;
+}
+%border{
+    border-bottom: 1px solid gray;
+}
